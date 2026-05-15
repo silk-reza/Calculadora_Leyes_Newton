@@ -422,7 +422,8 @@ function easeInOut(p) { return p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p+2, 2)/2; }
   const canvas = document.getElementById('canvas-tercera');
   if (!canvas) return;
 
-  let data = { scenario: 'choque', F: 120, dt: 0.2, mA: 4, mB: 6, FAB: 120, FBA: -120, aA: 30, aB: 20 };
+  // let data = { scenario: 'choque', F: 120, dt: 0.2, mA: 4, mB: 6, FAB: 120, FBA: -120, aA: 30, aB: 20 };
+  let data = {scenario: 'bloques', F: 50, mA: 5, mB: 3, FAB: 50, FBA: -50, aA: 10, aB: 16.6667 };
   let animId = null, t = 0, running = false;
 
   const T1 = 1.2, T2 = 2.4, T3 = 5.2;
