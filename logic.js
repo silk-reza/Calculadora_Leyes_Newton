@@ -127,7 +127,7 @@ const ESCENARIOS3 = {
 
 let currentScenario2 = 'bloque';
 let currentSolve2    = 'aceleracion';
-let currentScenario3 = 'choque';
+let currentScenario3 = 'bloques';
 
 /* ============================================================
    RENDER ENUNCIADO
