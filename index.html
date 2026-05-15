@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leyes de Newton — Calculadora Física</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-label">Física Clásica · Universidad Mariano Gálvez de Guatemala</div>
+    <h1 class="site-title">Leyes de<br><span class="accent">Newton</span></h1>
+    <p class="site-subtitle">Calculadora interactiva — 2ª y 3ª Ley</p>
+  </header>
+
+  <!-- TAB SELECTOR -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="segunda">
+      <span class="tab-number">02</span>
+      <span class="tab-label">Segunda Ley</span>
+    </button>
+    <button class="tab-btn" data-tab="tercera">
+      <span class="tab-number">03</span>
+      <span class="tab-label">Tercera Ley</span>
+    </button>
+  </nav>
+
+  <!-- ===== SEGUNDA LEY ===== -->
+  <section class="tab-content active" id="tab-segunda">
+
+    <!-- Selector de escenario -->
+    <div class="scenario-selector">
+      <div class="scenario-label">Selecciona el escenario:</div>
+      <div class="scenario-grid">
+        <button class="scenario-btn active" data-scenario2="bloque">
+          <span class="scenario-icon">▭</span>
+          <span class="scenario-name">Bloque deslizante</span>
+        </button>
+        <button class="scenario-btn" data-scenario2="atwood">
+          <span class="scenario-icon">⚖</span>
+          <span class="scenario-name">Máquina de Atwood</span>
+        </button>
+        <button class="scenario-btn" data-scenario2="mesa">
+          <span class="scenario-icon">⊓</span>
+          <span class="scenario-name">Polea en mesa</span>
+        </button>
+        <button class="scenario-btn" data-scenario2="inclinado">
+          <span class="scenario-icon">◺</span>
+          <span class="scenario-name">Plano inclinado</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Enunciado dinámico -->
+    <div class="card enunciado-card" id="enunciado-segunda">
+      <!-- Renderizado por logic.js -->
+    </div>
+
+    <!-- Animación -->
+    <div class="card animation-card">
+      <div class="card-tag">Animación</div>
+      <div class="animation-stage" id="stage-segunda">
+        <canvas id="canvas-segunda"></canvas>
+        <div class="anim-legend" id="legend-segunda"></div>
+      </div>
+      <div class="anim-controls">
+        <button class="btn-anim" id="btn-play-segunda">▶ Simular</button>
+        <button class="btn-anim secondary" id="btn-reset-segunda">↺ Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Calculadora -->
+    <div class="card calc-card">
+      <div class="card-tag">Calculadora</div>
+
+      <div class="solve-selector" id="solve-selector-segunda">
+        <!-- Renderizado dinámico según escenario -->
+      </div>
+
+      <div class="inputs-grid" id="inputs-segunda">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <button class="btn-calc" id="btn-calc-segunda">Calcular</button>
+
+      <div class="result-box" id="result-segunda">
+        <div class="result-placeholder">Ingresa los valores y presiona Calcular</div>
+      </div>
+
+      <div class="formula-strip" id="formula-segunda"></div>
+    </div>
+
+  </section>
+
+  <!-- ===== TERCERA LEY ===== -->
+  <section class="tab-content" id="tab-tercera">
+
+    <!-- Selector de escenario -->
+    <div class="scenario-selector">
+      <div class="scenario-label">Selecciona el escenario:</div>
+      <div class="scenario-grid">
+        <button class="scenario-btn" data-scenario3="bloques">
+          <span class="scenario-icon">▭▭</span>
+          <span class="scenario-name">Bloques en contacto</span>
+        </button>
+        <button class="scenario-btn" data-scenario3="elevador">
+          <span class="scenario-icon">↕</span>
+          <span class="scenario-name">Elevador con persona</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Enunciado dinámico -->
+    <div class="card enunciado-card" id="enunciado-tercera">
+      <!-- Renderizado por logic.js -->
+    </div>
+
+    <!-- Animación -->
+    <div class="card animation-card">
+      <div class="card-tag">Animación</div>
+      <div class="animation-stage" id="stage-tercera">
+        <canvas id="canvas-tercera"></canvas>
+        <div class="anim-legend" id="legend-tercera"></div>
+      </div>
+      <div class="anim-controls">
+        <button class="btn-anim" id="btn-play-tercera">▶ Simular</button>
+        <button class="btn-anim secondary" id="btn-reset-tercera">↺ Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Calculadora -->
+    <div class="card calc-card">
+      <div class="card-tag">Calculadora</div>
+
+      <div class="inputs-grid" id="inputs-tercera">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <button class="btn-calc" id="btn-calc-tercera">Calcular</button>
+
+      <div class="result-box" id="result-tercera">
+        <div class="result-placeholder">Ingresa los valores y presiona Calcular</div>
+      </div>
+
+      <div class="formula-strip" id="formula-tercera"></div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>Física Clásica · Leyes de Newton · 2ª y 3ª Ley · UMG</span>
+  </footer>
+
+  <script src="logic.js"></script>
+  <script src="animation.js"></script>
+</body>
+</html>
